@@ -10,7 +10,7 @@ describe("User authenticates", () => {
       cy.get("#password").type("password");
       cy.get('button').contains('Submit').click()
     });
-    cy.get("#message).should('contain', 'Hi user@mail.com');
+    cy.get('#message').should("contain", 'Hi user@mail.com');
   });
 
   it("unsuccessfully with invalid credentials", () => {
@@ -20,6 +20,6 @@ describe("User authenticates", () => {
       cy.get("#password").type("wrongpassword");
       cy.get('button').contains('Submit').click()
     });
-    cy.get("#message).should('contain', 'Invalid login credentials.Please try again.');
+    cy.get('#message').should('contain', 'Invalid login credentials.Please try again.');
   });
-})
+});
