@@ -1,3 +1,4 @@
+
 describe("Cooper Client calculates successfully", () => {
   it("calculates cooper performance", () => {
     cy.visit("/");
