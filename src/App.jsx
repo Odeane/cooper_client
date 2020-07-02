@@ -8,7 +8,22 @@ class App extends Component {
     distance: "",
     gender: "female",
     age: "",
-    renderLoginForm: false
+    renderLoginForm: false,
+    authenticated: false,
+    message: ""
+  };
+
+  onLogin = async e => {
+    e.preventDefault();
+    const response = await authenticate(
+      e.target.email.value,
+      e.target.password.value
+    );
+    if (response.authenticated) {
+      this.setState({ authenticated: true });
+    } else {
+      this.setState({ message: response.message, renderLoginForm: false });
+    }
   };
 
   onChangeHandler = e => {
@@ -17,7 +32,7 @@ class App extends Component {
 
   render() {
     const renderLogin = this.state.renderLoginForm ? (
-      <LoginForm />
+      <LoginForm submitFormHandler={this.onLogin}/>
     ) : (
       <button
         id="login"
@@ -26,6 +41,7 @@ class App extends Component {
         Login
       </button>
     );
+
     return (
       <>
         <InputFields onChangeHandler={this.onChangeHandler} />
