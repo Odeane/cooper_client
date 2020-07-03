@@ -13,7 +13,8 @@ class App extends Component {
     renderLoginForm: false,
     authenticated: false,
     message: "",
-    entrySaved: false
+    entrySaved: false,
+    renderIndex: false
   };
 
   onLogin = async e => {
@@ -73,8 +74,7 @@ class App extends Component {
         performanceDataIndex = (
           <button id="show-index" onClick={() => this.setState({ renderIndex: true })}>Show past entries</button>
         )
-        }
-        
+      }  
     }
 
     return (
