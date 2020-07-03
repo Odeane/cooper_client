@@ -3,6 +3,7 @@ import DisplayCooperResult from "./components/DisplayCooperResult";
 import InputFields from "./components/InputFields";
 import LoginForm from "./components/LoginForm";
 import { authenticate } from './modules/auth';
+import DisplayPerformanceData from "./components/DisplayPerformanceData"
 
 class App extends Component {
   state = {
@@ -58,6 +59,17 @@ class App extends Component {
         renderLogin = (
           <p id="message">Hi {JSON.parse(sessionStorage.getItem("credentials")).uid}</p>
         );
+        if (this.state.renderIndex) {
+          performanceDataIndex = (
+            <>
+              <DisplayPerformanceData
+                updateIndex={this.state.updateIndex}
+                indexUpdated={() => this.setState({ updateIndex: false })}
+              />
+              <button onClick={() => this.setState({ renderIndex: false })}>Hide past entries</button>
+            </>
+          )
+        } else {
         performanceDataIndex = (
           <button id="show-index" onClick={() => this.setState({ renderIndex: true })}>Show past entries</button>
         )
@@ -82,5 +94,4 @@ class App extends Component {
     );
   }
 }
-
 export default App;
