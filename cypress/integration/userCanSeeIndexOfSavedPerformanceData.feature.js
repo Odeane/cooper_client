@@ -1,5 +1,5 @@
 describe('User attempts to view his/her performance data', () => {
-    before(function() {
+    beforeEach(function() {
       cy.server();
       cy.route({
         method: 'GET',
