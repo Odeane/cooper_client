@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { saveData } from '../modules/performanceData';
+import { saveData, getData } from '../modules/performanceData';
 
 class DisplayPerformanceData extends Component {
   state = {
@@ -18,7 +18,7 @@ class DisplayPerformanceData extends Component {
   async getPerformanceData() {
     let result = await getData();
     this.setState({ performanceData: result.data.entries }, () => {
-      this.props.indexUpdate();
+      this.props.indexUpdated();
     })
 
   }
