@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { getData, saveData } from '../modules/performanceData';
-import { Line } from 'react-chartjs-2';
+import { Bar } from 'react-chartjs-2';
 
 class DisplayPerformanceData extends Component {
   state = {
@@ -43,7 +43,7 @@ class DisplayPerformanceData extends Component {
         datasets: [{
           data: distances,
           label: "saved distances",
-          backgroundColor: 'rgba(16, 29, 110, 0.72)',
+          backgroundColor: 'rgba(31, 132, 63, 0.85)',
           borderColor: 'rgba(16, 29, 110, 0.96)',
           borderCapStyle: 'butt',
           pointHoverBackgroundColor: 'rgba(75,192,192,1)',
@@ -53,7 +53,13 @@ class DisplayPerformanceData extends Component {
       }
       dataIndex = (
         <div>
-          <Line data={data} />
+          <Bar data={data}
+            width={100}
+            height={50}
+            options={{
+              maintainAspectRatio: true
+            }}
+          />
         </div>
       )
     }
