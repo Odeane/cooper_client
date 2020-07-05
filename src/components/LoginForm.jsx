@@ -18,14 +18,14 @@ const LoginForm = ({ submitFormHandler }) => {
                     <Segment stacked>
 
                         <label>Email</label>
-                        <input fluid icon='user' iconPosition='left' placeholder='E-mail address' name="email" type="email" id="email"></input>
+                        <Form.Input fluid icon='user' iconPosition='left' placeholder='E-mail address' name="email" id="email"/>
 
                         <label>Password</label>
-                        <input fluid
+                        <Form.Input fluid
                             icon='lock'
                             iconPosition='left'
                             placeholder='Password'
-                            name="password" type="password" id="password"></input>
+                            name="password" id="password"/>
 
 
                         <Button color='green' fluid size='large' id="submit">Submit</Button>
