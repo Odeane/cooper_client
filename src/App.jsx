@@ -101,7 +101,7 @@ class App extends Component {
 <div> 
         <Item.Group>
           <Item>
-            <Item.Image size='small' src='https://www.cooperinstitute.org/vault/2440/web/articles/thumb_15825-CCB42EE2-997D-D83F-CB6A1978EEA3AA85.jpg' />
+              <Item.Image size='small' src='https://www.mensjournal.com/wp-content/uploads/mf/cardio-running-1280.jpg?w=1200&h=1200&crop=1' />
             <Item.Content>
               <Item.Header as='a'>12 Minute Run Test Administration</Item.Header>
               <Item.Description>
